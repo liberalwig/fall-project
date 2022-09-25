@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mappers.userMapper">
+
+    <select id="userLogin" resultType="String">
+        SELECT id FROM user WHERE id=#{id} AND pw=#{password}
+    </select>
+
+    <insert id="userJoin">
+        INSERT INTO user (id, password, email, phone)
+        VALUES (#{id}, #{password}, #{email}, #{phone})
+    </insert>
+</mapper>
